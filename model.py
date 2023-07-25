@@ -14,7 +14,7 @@ device = ('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Computation device: {device}\n")
 
 
-class LSTMClassifier(nn.Module):
+class LSTMRegressor(nn.Module):
 
     def __init__(self, input_dim, hidden_dim, layer_dim, output_dim):
         super().__init__()
@@ -44,7 +44,7 @@ output_dim = 1
 seq_dim = 512
 
 def get_model():
-  return LSTMClassifier(input_dim, hidden_dim, layer_dim, output_dim)
+  return LSTMRegressor(input_dim, hidden_dim, layer_dim, output_dim)
 
 model = get_model()
 model = model.cuda()
