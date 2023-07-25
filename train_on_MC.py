@@ -128,9 +128,9 @@ print(model)
 
 from torchinfo import summary
 if torch.cuda.is_available():
-  summary(model.cuda(), input_size=(1, 512, 2))
+  print(summary(model.cuda(), input_size=(1, 512, 2)))
 else:
-  summary(model, input_size=(1, 512, 2))
+  print(summary(model, input_size=(1, 512, 2)))
 
 # optimizer + lr schedular
 from torch import optim
